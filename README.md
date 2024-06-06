@@ -22,10 +22,9 @@ We introduce **BoT**, a novel and versatile thought-augmented reasoning approach
 
 ## TODO
 
-- [ ] Release BoT v4 with more functions
-- [ ] Release BoT v3 with buffer-manager
-- [ ] Release BoT v2 with meta-buffer
-- [x] Release BoT v1 test code without meta-buffer and buffer-manager
+- [ ] Release BoT with more functions
+- [ ] Release BoT with meta-buffer and buffer-manager
+- [x] Release initial code of BoT
 
 ## Comparison between Different Methods
 
