@@ -71,13 +71,13 @@ pip install -r requirements.txt
 
 #### 3.1. Running on Three Benchmarks
 
-Our **BoT v1** is easy to use. Just run:
+Our BoT is easy to use. Just run:
 
 ```bash
 python run_benchmarks.py --task_name 'gameof24' --api_key 'input your API key here if you want to use GPT-4' --model_id 'the model ID of GPT-4 or the path to your local LLM'
 ```
 
-Here, **--task_name** could be one of **gameof24, checkmate, wordsorting**.
+Here, **--task_name** could be one of gameof24, checkmate, wordsorting.
 
 The **--api_key** is required if you want to use GPT-series; if not, you can skip it.
 
@@ -89,7 +89,7 @@ The results generated during the experiment are stored in the `/test_results` di
 
 #### 3.2. Validate the Test Results
 
-Run the command below to validate the test results of our **BoT**:
+Run the command below to validate the test results of our BoT:
 
 ```python
 python validate_results.py --task_name 'gameof24'
