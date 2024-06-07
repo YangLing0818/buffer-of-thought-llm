@@ -1,6 +1,8 @@
 # Buffer of Thoughts: Thought-Augmented Reasoning with Large Language Models
 
-This repository contains the official implementation of our [Buffer of Thoughts (BoT)]() framework.
+ <a href='https://arxiv.org/abs/2406.04271'><img src='https://img.shields.io/badge/arXiv-2406.04271-b31b1b.svg'></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+This repository contains the official implementation of our [Buffer of Thoughts (BoT)](https://arxiv.org/abs/2406.04271) framework. Affiliation: Peking University, UC Berkeley, Stanford University
 
 
 ## Introduction
@@ -98,10 +100,10 @@ This will print out the accuracy of the selected task.
 ## 📖 BibTeX
 
 ```
-@article{yang2024bot,
+@article{yang2024buffer,
   title={Buffer of Thoughts: Thought-Augmented Reasoning with Large Language Models},
   author={Yang, Ling and Yu, Zhaochen and Zhang, Tianjun and Cao, Shiyi and Xu, Minkai and Zhang, Wentao and Gonzalez, Joseph E and Cui, Bin},
-  journal={arXiv preprint arXiv:2401.},
+  journal={arXiv preprint arXiv:2406.04271},
   year={2024}
 }
 ```
