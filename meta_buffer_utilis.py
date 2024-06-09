@@ -44,46 +44,46 @@ Distilled Information:
 
 
 def extract_and_execute_code(text):
-    # 定义代码块的开始和结束标记
+    # Define the start and end markers for the code block
     code_start_marker = "```python"
     code_end_marker = "```"
 
-    # 找到Python代码开始的位置
+    # Find the position where the Python code starts
     code_start_index = text.find(code_start_marker)
     if code_start_index == -1:
         code_start_marker = "```"
         code_start_index = text.find(code_start_marker)
-    # 如果找到了代码开始的标记，提取并执行代码
+    # If the start marker is found, extract and execute the code
     if code_start_index != -1:
-        # 尝试找到代码结束的位置
+        # Try to find the position where the code ends
         code_end_index = text.find(code_end_marker, code_start_index + len(code_start_marker))
         
-        # 如果没有找到代码结束的标记，则假设代码一直持续到文本的末尾
+        # If the end marker is not found, assume the code continues to the end of the text
         if code_end_index == -1:
             code_end_index = len(text)
         
-        # 提取代码部分
+        # Extract the code part
         code_str = text[code_start_index + len(code_start_marker):code_end_index].strip()
         
-        # 创建一个字符串流来捕获输出
+        # Create a string stream to capture the output
         old_stdout = sys.stdout
         new_stdout = io.StringIO()
         sys.stdout = new_stdout
         
-        # 执行提取的代码
+        # Execute the extracted code
         try:
             exec(code_str, globals())
         except Exception as e:
-            # 恢复原始的标准输出
+            # Restore the original standard output
             sys.stdout = old_stdout
             return f"An error occurred: {e}", code_str
         
-        # 获取执行代码的输出
+        # Get the output from the executed code
         sys.stdout = old_stdout
         return new_stdout.getvalue(), code_str
     else:
-        
         return "No Python code found in the provided string."
+
 
 
 def extract_answer(text):
