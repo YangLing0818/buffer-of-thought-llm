@@ -23,10 +23,10 @@ We introduce **BoT**, a novel and versatile thought-augmented reasoning approach
 **[2024.6]** Our test code on three benchmarks is now available, supporting different LLMs (e.g., GPT-4, Llama3-70B).
 
 ## TODO
-
-- [ ] Release BoT with more functions
-- [ ] Release BoT with meta-buffer and buffer-manager
-- [x] Release initial code of BoT
+- [ ] Extending BoT to more applications
+- [ ] Release meta-buffer and buffer-manager
+- [ ] Update the code for smaller LLMs (e.g., Llama3-8B) within two weeks
+- [x] Release initial code of BoT, supporting GPT-4 and Llama3-70B
 
 ## Comparison between Different Methods
 
