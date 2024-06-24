@@ -1,7 +1,7 @@
 import json
 from bot_pipeline import BoT
 import argparse
-import time
+import os
 import datetime
 
 parser = argparse.ArgumentParser()
@@ -32,7 +32,9 @@ if __name__ == "__main__":
     model_id = args.model_id
     now = datetime.datetime.now()
     timestamp_str = now.strftime("%Y-%m-%d-%H:%M:%S")
-    
+    output_dir = 'test_results'
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
     benchmark_dict = {
         'gameof24':GameOf24,
         'checkmate':CheckmateInOne,
