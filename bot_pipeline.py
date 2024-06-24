@@ -111,7 +111,7 @@ class BoT:
         problem_id_list = [0,1,2]
         self.instantiation_instruct = """
 You are an expert in problem analysis and can apply previous problem-solving approaches to new issues. The user will provide a specific task description and a thought template. Your goal is to analyze the user's task and generate a specific solution based on the thought template. If the instantiated solution involves Python code, only provide the code and let the compiler handle it. If the solution does not involve code, provide a final answer that is easy to extract from the text.
-# It should be noted that all the python code should be within one code block, the answer should not include more than one code block!
+It should be noted that all the python code should be within one code block, the answer should not include more than one code block! And strictly follow the thought-template to instantiate the python code but you should also adjust the input parameter according to the user input!
         """
         
         self.formated_input = f"""
@@ -148,6 +148,7 @@ Your respond should follow the format below:
                 self.inter_result = self.final_result
                 while(('An error occurred' in self.inter_result) or (self.inter_result == '') or (self.inter_result == 'None')):
                     print('The code cannot be executed correctly, here we continue the edit phase:',self.inter_result)
+                    print('The problem code is:',code_str)
                     self.inter_input = self.pipeline.get_respond(self.inspector_prompt,self.inter_input)
                     print(self.inter_input)
                     self.inter_result, inter_code_str = extract_and_execute_code(self.inter_input)
