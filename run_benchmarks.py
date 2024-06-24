@@ -1,10 +1,12 @@
 import json
 from bot_pipeline import BoT
 import argparse
+import time
+import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--task_name',type=str,default='gameof24',choices=['gameof24','checkmate','wordsorting'])
-parser.add_argument('--api_key',type=str,help='input your api key here')
+parser.add_argument('--api_key',default=None,type=str,help='input your api key here')
 parser.add_argument('--model_id',type=str,default='gpt-4o',help='Input model id here, if use local model, input the path to the local model')
 
 
@@ -28,6 +30,9 @@ if __name__ == "__main__":
     task = args.task_name
     api_key = args.api_key
     model_id = args.model_id
+    now = datetime.datetime.now()
+    timestamp_str = now.strftime("%Y-%m-%d-%H:%M:%S")
+    
     benchmark_dict = {
         'gameof24':GameOf24,
         'checkmate':CheckmateInOne,
@@ -50,18 +55,19 @@ if __name__ == "__main__":
     user_prompt = benchmark_dict[task]
     path = path_dict[task]    
     problem_id = buffer_dict[task]
-    
+    test_bot = BoT(
+            user_input = None,
+            problem_id= problem_id,
+            api_key= api_key,
+            model_id= model_id,
+            need_check = True
+        )
     for line in (open(path)):
         input = json.loads(line)['input']
         user_input = user_prompt + input
-        test_bot = BoT(
-            user_input = user_input,
-            problem_id= problem_id,
-            api_key= api_key,
-            model_id= model_id
-        )
+        test_bot.update_input(user_input)
         result = test_bot.bot_run()
         tmp = {'input':input,'result':result}
-        with open(f'test_results/BoT_{task}.jsonl', 'a+', encoding='utf-8') as file:
+        with open(f'test_results/BoT_{task}_{timestamp_str}.jsonl', 'a+', encoding='utf-8') as file:
             json_str = json.dumps(tmp)
             file.write(json_str + '\n')
