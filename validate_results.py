@@ -3,10 +3,11 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--task_name',type=str,default='gameof24',choices=['gameof24','checkmate','wordsorting'])
-
+parser.add_argument('--test_path',type=str)
 if __name__ == "__main__":
     args = parser.parse_args()
     task = args.task_name
+    test_path = args.test_path
     benchmark_path_dict = {
         'gameof24':'benchmarks/gameof24.jsonl',
         'checkmate':'benchmarks/CheckmateInOne.jsonl',
@@ -18,7 +19,6 @@ if __name__ == "__main__":
         'wordsorting':'test_results/BoT_wordsorting.jsonl'
     }
     benchmark_path = benchmark_path_dict[task]
-    test_path = test_path_dict[task]
     correct = 0
     truth = []
     test = []
@@ -42,7 +42,8 @@ if __name__ == "__main__":
         for i in range(len(test)):
             if truth[i] == test[i]:
                 correct += 1
-    print(f'correct number:{correct},accuracy:{correct/len(test)}')
+    print(f'Total number:{len(test)},Correct number:{correct},Accuracy:{correct/len(test)}')
+    
         
             
             
