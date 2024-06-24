@@ -3,7 +3,8 @@
  <a href='https://arxiv.org/abs/2406.04271'><img src='https://img.shields.io/badge/arXiv-2406.04271-b31b1b.svg'></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 This repository contains the official implementation of our [Buffer of Thoughts (BoT)](https://arxiv.org/abs/2406.04271) framework. Affiliation: Peking University, UC Berkeley, Stanford University
-
+## 🚩 New Updates 
+**[2024.6.24]** Our test code now support smaller models like Meta-Llama3-8B
 
 ## Introduction
 
@@ -18,16 +19,16 @@ We introduce **BoT**, a novel and versatile thought-augmented reasoning approach
     </tr>
 </table>
 
-## 🚩 New Updates 
 
-**[2024.6]** Our test code on three benchmarks is now available, supporting different LLMs (e.g., GPT-4, Llama3-70B).
-
-## TODO
+## TODO & Updates
 - [ ] Extending BoT to more applications
 - [ ] Release meta-buffer and buffer-manager
-- [ ] Update the code for smaller LLMs (e.g., Llama3-8B) within two weeks
+- [x] Update the code for smaller LLMs (e.g., Llama3-8B) within two weeks
 - [x] Release initial code of BoT, supporting GPT-4 and Llama3-70B
+      
+**[2024.6]** Our test code on three benchmarks is now available, supporting different LLMs (e.g., GPT-4, Llama3-70B).
 
+**[2024.6.24]** Our test code now support smaller models like Meta-Llama3-8B
 ## Comparison between Different Methods
 
 | Task/Method           | GPT-4 | PAL  | ToT  | Meta Prompting | BoT (Ours) |
@@ -92,10 +93,10 @@ The results generated during the experiment are stored in the `/test_results` di
 Run the command below to validate the test results of our BoT:
 
 ```python
-python validate_results.py --task_name 'gameof24'
+python validate_results.py --task_name 'gameof24' --test_path 'The path to the .jsonl file you want to validate'
 ```
 
-This will print out the accuracy of the selected task.
+This will print out the accuracy of the selected task on your relevant .jsonl file.
 
 ## 📖 BibTeX
 
