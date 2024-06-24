@@ -26,10 +26,7 @@ We introduce **BoT**, a novel and versatile thought-augmented reasoning approach
 </table>
 
 
-      
-**[2024.6]** Our test code on three benchmarks is now available, supporting different LLMs (e.g., GPT-4, Llama3-70B).
 
-**[2024.6.24]** Our test code now support smaller models like Meta-Llama3-8B
 ## Comparison between Different Methods
 
 | Task/Method           | GPT-4 | PAL  | ToT  | Meta Prompting | BoT (Ours) |
