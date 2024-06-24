@@ -4,7 +4,13 @@
 
 This repository contains the official implementation of our [Buffer of Thoughts (BoT)](https://arxiv.org/abs/2406.04271) framework. Affiliation: Peking University, UC Berkeley, Stanford University
 ## 🚩 New Updates 
-**[2024.6.24]** Our test code now support smaller models like Meta-Llama3-8B
+
+- [x]  Release initial code of BoT, supporting GPT-4 and Llama3-70B **[2024.6.6]**
+- [x]  Update the code for smaller LLMs (e.g., Llama3-8B) **[2024.6.24]**
+- [ ] Release meta-buffer and buffer-manager
+- [ ] Extending BoT to more applications
+
+
 
 ## Introduction
 
@@ -20,11 +26,6 @@ We introduce **BoT**, a novel and versatile thought-augmented reasoning approach
 </table>
 
 
-## TODO & Updates
-- [ ] Extending BoT to more applications
-- [ ] Release meta-buffer and buffer-manager
-- [x] Update the code for smaller LLMs (e.g., Llama3-8B) within two weeks
-- [x] Release initial code of BoT, supporting GPT-4 and Llama3-70B
       
 **[2024.6]** Our test code on three benchmarks is now available, supporting different LLMs (e.g., GPT-4, Llama3-70B).
 
