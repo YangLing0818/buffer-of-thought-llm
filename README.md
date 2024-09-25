@@ -3,12 +3,6 @@
  <a href='https://arxiv.org/abs/2406.04271'><img src='https://img.shields.io/badge/arXiv-2406.04271-b31b1b.svg'></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 This repository contains the official implementation of our [Buffer of Thoughts (BoT)](https://arxiv.org/abs/2406.04271) framework. Affiliation: Peking University, UC Berkeley, Stanford University
-## 🚩 New Updates 
-
-- [x]  Release initial code of BoT, supporting GPT-4 and Llama3-70B **[2024.6.6]**
-- [x]  Update the code for smaller LLMs (e.g., Llama3-8B) **[2024.6.24]**
-- [ ] Release meta-buffer and buffer-manager
-- [ ] Extending BoT to more applications
 
 
 
@@ -55,7 +49,7 @@ For now, we release our demo version of BoT based on three different benchmarks:
 
 ### 2. Meta Buffer
 
-For each task, we choose one thought template sampled from our meta-buffer library. **Stay tuned for our complete meta-buffer library update!**
+For each task, we choose one thought template sampled from our meta-buffer library. You may use our framework to construct your own meta buffer.
 
 ### 3. Quick Start
 
