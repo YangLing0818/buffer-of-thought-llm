@@ -6,6 +6,12 @@ Official implementation of our [Buffer of Thoughts (BoT)](https://arxiv.org/abs/
 
 Based on our BoT, we propose [SuperCorrect](https://github.com/YangLing0818/SuperCorrect-llm), a novel two-stage fine-tuning method for improving both reasoning accuracy and self-correction ability for LLMs. Notably, the new SupperCorrect-7B model achieves new SOTA performance on MATH and GSM8K benchmarks among all 7B models.
 
+## 📢 News
+
+[2024.10] 🎉 We update our repo and release our implementation of **Meta Buffer** and **Buffer Manager**  on math problems such as **GSM8K** based on amazing work [light-RAG](https://github.com/HKUDS/LightRAG).
+
+[2024.6] 🎉 We release our code for evaluation on three benchmarks.
+
 ## Introduction
 
 We introduce **BoT**, a novel and versatile thought-augmented reasoning approach designed to enhance the accuracy, efficiency, and robustness of large language models (LLMs). Specifically, we propose a **meta-buffer** to store a series of high-level thoughts, referred to as **thought-templates**, distilled from problem-solving processes across various tasks. For each problem, we retrieve a relevant thought-template and adaptively instantiate it with specific reasoning structures to conduct efficient reasoning. To ensure scalability and stability, we also propose a **buffer-manager** to dynamically update the meta-buffer, thus enhancing its capacity as more tasks are solved. We conduct extensive experiments on 10 challenging reasoning-intensive tasks, achieving significant performance improvements over previous state-of-the-art (SOTA) methods: 11% on Game of 24, 20% on Geometric Shapes, and 51% on Checkmate-in-One. Further analysis demonstrates the superior generalization ability and robustness of our BoT, while requiring only 12% of the cost of multi-query prompting methods (e.g., tree/graph of thoughts) on average. Notably, we find that our **Llama3-8B + BoT has the potential to surpass Llama3-70B** model.
@@ -37,11 +43,6 @@ We introduce **BoT**, a novel and versatile thought-augmented reasoning approach
 | Penguins              | 71.1  | 93.3 | 84.2 |      88.6      |  **94.7**  |
 | Sonnet Writing        | 62.0  | 36.2 | 68.4 |      79.6      |  **80.0**  |
 
-## 📢 News
-
-[2024.10] 🎉 We update our repo and release our implementation of **Meta Buffer** and **Buffer Manager**  on math problems such as **GSM8K** based on amazing work [light-RAG](https://github.com/HKUDS/LightRAG).
-
-[2024.6] 🎉 We release our code for evaluation on three benchmarks.
 
 ## Evaluation and Inference with Buffer of Thoughts
 
