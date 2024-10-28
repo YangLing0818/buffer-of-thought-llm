@@ -1,0 +1,493 @@
+# MetaBuffer-Math
+
+## Thought templates:
+
+### Problem Type 1: Normalization Problem
+
+**Definition**: When solving this type of problem, first find out how much one unit is (i.e., the quantity of a single unit), and then use that as a standard to calculate the required quantity.
+
+**Quantitative Relationships**:
+- Total quantity ÷ Number of units = Single unit quantity
+- Single unit quantity × Number of units = Required quantity
+- Or: Total A ÷ (Total B ÷ Number of units B) = Number of units A
+
+**Solution Strategy**: First find the quantity of a single unit, then use it as a standard to calculate the required quantity.
+
+**Example**: Buying 5 pencils costs 0.6 yuan. How much would it cost to buy 16 pencils of the same kind?
+
+**Solution**:
+First, find the cost of one pencil:  
+0.6 ÷ 5 = 0.12 yuan
+
+Then, calculate the cost of 16 pencils:  
+0.12 × 16 = 1.92 yuan
+
+Comprehensive equation:  
+0.6 ÷ 5 × 16 = 0.12 × 16 = 1.92 yuan
+
+---
+
+### Problem Type 2: Total Quantity Problem
+
+**Definition**: In this type of problem, first determine the "total quantity" and then solve the problem based on the given conditions. The "total quantity" could refer to the total price of goods, total workload over several days, total yield from several acres, total distance traveled in several hours, etc.
+
+**Quantitative Relationships**:
+- Quantity per unit × Number of units = Total quantity
+- Total quantity ÷ Quantity per unit = Number of units
+
+**Solution Strategy**: First calculate the total quantity, then solve the problem.
+
+**Example**: A clothing factory originally used 3.2 meters of fabric to make one set of clothes. After improving the cutting method, each set uses 2.8 meters. How many sets of clothes can be made with the fabric originally used for 791 sets?
+
+**Solution**:
+First, calculate the total amount of fabric:  
+3.2 × 791 = 2531.2 meters
+
+Then, calculate how many sets can now be made:  
+2531.2 ÷ 2.8 = 904 sets
+
+Comprehensive equation:  
+3.2 × 791 ÷ 2.8 = 904 sets
+
+---
+
+### Problem Type 3: Sum and Difference Problem
+
+**Definition**: Given the sum and difference of two quantities, find out the value of each quantity.
+
+**Quantitative Relationships**:
+- Larger number = (Sum + Difference) ÷ 2
+- Smaller number = (Sum - Difference) ÷ 2
+
+**Solution Strategy**: For simple problems, directly use the above formulas. For more complex problems, adapt the formulas accordingly.
+
+**Example**: Class A and Class B have a total of 98 students, and Class A has 6 more students than Class B. How many students are in each class?
+
+**Solution**:
+Class A = (98 + 6) ÷ 2 = 52 students  
+Class B = (98 - 6) ÷ 2 = 46 students
+
+---
+
+### Problem Type 4: Sum and Multiple Problem
+
+**Definition**: Given the sum of two numbers and the information that "the larger number is a multiple of the smaller number" (or "the smaller number is a fraction of the larger number"), find out the value of each number.
+
+**Quantitative Relationships**:
+- Total sum ÷ (Multiple + 1) = Smaller number
+- Total sum - Smaller number = Larger number
+- Or: Smaller number × Multiple = Larger number
+
+**Solution Strategy**: For simple problems, directly use the above formulas. For more complex problems, adapt the formulas accordingly.
+
+**Example**: There are 248 trees in an orchard, and the number of peach trees is three times the number of apricot trees. How many apricot and peach trees are there?
+
+**Solution**:
+First, calculate the number of apricot trees:  
+248 ÷ (3 + 1) = 62 trees
+
+Then, calculate the number of peach trees:  
+62 × 3 = 186 trees
+
+---
+
+### Problem Type 5: Difference and Multiple Problem
+
+**Definition**: Given the difference between two numbers and the information that "the larger number is a multiple of the smaller number" (or "the smaller number is a fraction of the larger number"), find out the value of each number.
+
+**Quantitative Relationships**:
+- Difference ÷ (Multiple - 1) = Smaller number
+- Smaller number × Multiple = Larger number
+
+**Solution Strategy**: For simple problems, directly use the above formulas. For more complex problems, adapt the formulas accordingly.
+
+**Example**: In an orchard, the number of peach trees is three times the number of apricot trees, and there are 124 more peach trees than apricot trees. How many apricot and peach trees are there?
+
+**Solution**:
+First, calculate the number of apricot trees:  
+124 ÷ (3 - 1) = 62 trees
+
+Then, calculate the number of peach trees:  
+62 × 3 = 186 trees
+
+---
+
+### Problem Type 6: Proportional Problem
+
+**Definition**: There are two known quantities of the same type, and one is a multiple of the other. First, find the multiple, then use the proportional relationship to calculate the required quantity.
+
+**Quantitative Relationships**:
+- Total A ÷ Quantity A = Multiple
+- Quantity B × Multiple = Total B
+
+**Solution Strategy**: First, find the multiple, then use the proportional relationship to solve the problem.
+
+**Example**: 100 kilograms of rapeseed can produce 40 kilograms of oil. How much oil can be produced from 3700 kilograms of rapeseed?
+
+**Solution**:
+First, calculate how many times 3700 kilograms is compared to 100 kilograms:  
+3700 ÷ 100 = 37 times
+
+Then, calculate how much oil can be produced:  
+40 × 37 = 1480 kilograms
+
+Comprehensive equation:  
+40 × (3700 ÷ 100) = 1480 kilograms
+
+---
+
+### Problem Type 7: Meeting Problem
+
+**Definition**: Two moving objects start from different locations and move towards each other. The problem is to calculate when or where they will meet.
+
+**Quantitative Relationships**:
+- Meeting time = Total distance ÷ (Speed of A + Speed of B)
+- Total distance = (Speed of A + Speed of B) × Meeting time
+
+**Solution Strategy**: For simple problems, directly use the above formulas. For more complex problems, adapt the formulas accordingly.
+
+**Example**: The waterway between Nanjing and Shanghai is 392 kilometers long. Two ships set out from both ports at the same time and move towards each other. The ship from Nanjing travels at 28 kilometers per hour, and the ship from Shanghai travels at 21 kilometers per hour. How many hours will it take for the two ships to meet?
+
+**Solution**:
+Directly use the formula:  
+392 ÷ (28 + 21) = 8 hours
+
+---
+
+### Problem Type 8: Overtaking Problem
+
+**Definition**: Two moving objects start from different locations (or from the same location but at different times), and one moves faster than the other. The problem is to calculate when or where the faster one will overtake the slower one.
+
+**Quantitative Relationships**:
+- Overtaking time = Overtaking distance ÷ (Fast speed - Slow speed)
+- Overtaking distance = (Fast speed - Slow speed) × Overtaking time
+
+**Solution Strategy**: For simple problems, directly use the above formulas. For more complex problems, adapt the formulas accordingly.
+
+**Example**: A good horse travels 120 kilometers per day, while a poor horse travels 75 kilometers per day. The poor horse starts 12 days earlier. How many days will it take for the good horse to catch up?
+
+**Solution**:
+First, calculate how far ahead the poor horse is:  
+75 × 12 = 900 kilometers
+
+Then, calculate how many days it will take for the good horse to catch up:  
+900 ÷ (120 - 75) = 20 days
+
+Comprehensive equation:  
+75 × 12 ÷ (120 - 75) = 900 ÷ 45 = 20 days
+
+---
+
+### Problem Type 9: Tree Planting Problem
+
+**Definition**: In problems related to planting trees at equal distances, there are three factors: distance, spacing between trees, and the number of trees. Given two of these factors, calculate the third.
+
+**Quantitative Relationships**:
+- Linear planting: Number of trees = Distance ÷ Spacing + 1
+- Circular planting: Number of trees = Distance ÷ Spacing
+- Square planting: Number of trees = Distance ÷ Spacing - 4
+- Triangular planting: Number of trees = Distance ÷ Spacing - 3
+- Area planting: Number of trees = Area ÷ (Spacing × Row spacing)
+
+**Solution Strategy**: First, determine which type of tree planting problem it is, then apply the corresponding formula.
+
+**Example**: A riverbank is 136 meters long, and a tree is planted every 2 meters, with a tree at both ends. How many trees are needed in total?
+
+**Solution**:
+Directly use the "linear planting" formula:  
+136 ÷ 2 + 1 = 68 + 1 = 69 trees
+
+---
+
+### Problem Type 10: Age Problem
+
+**Definition**: Given the age of one person, calculate the age of another person based on the given conditions.
+
+**Quantitative Relationships**: The age difference between two people remains constant.
+
+**Solution Strategy**: Use the fact that the age difference remains constant and convert the problem into a sum-difference or ratio problem.
+
+**Example**: Emily and David are siblings. Emily is 5 years older than David. When David was 20 years old, he had a daughter. If Emily is now 40 years old, how many years ago was David's daughter born?
+
+### Solution Approach:
+1. **Constant Age Difference**: Emily is 5 years older than David, so their age difference remains 5 years.
+2. **Given Information**:
+   - Emily is currently 40 years old.
+   - Emily is 5 years older than David, so David is now \(40 - 5 = 35\) years old.
+   - David had a daughter when he was 20 years old.
+3. **Solving the Problem**: Since David is now 35 years old, and he had his daughter when he was 20, this means David’s daughter is \(35 - 20 = 15\) years old.
+4. **How Many Years Ago Was the Daughter Born**: David’s daughter is currently 15 years old, so she was born \(40 - 15 = 25\) years ago.
+
+### Conclusion:
+David's daughter was born **25 years ago**.
+
+---
+
+### Problem Type 11: Boat Problem
+
+**Definition**: This type of problem involves the speed of a boat, the speed of the current, and the time taken to travel upstream or downstream. The boat speed refers to the speed of the boat in still water, and the current speed refers to the speed of the water flow. When the boat is moving downstream, the speeds of the boat and the current are added; when moving upstream, the current speed is subtracted from the boat speed.
+
+**Quantitative Relationships**:
+- (Downstream speed + Upstream speed) ÷ 2 = Boat speed
+- (Downstream speed - Upstream speed) ÷ 2 = Current speed
+- Downstream speed = Boat speed × 2 - Upstream speed = Upstream speed + Current speed × 2
+- Upstream speed = Boat speed × 2 - Downstream speed = Downstream speed - Current speed × 2
+
+**Solution Strategy**: Directly apply the formulas.
+
+**Example**: A boat travels 320 kilometers downstream in 8 hours. The current speed is 15 kilometers per hour. How many hours will it take the boat to travel the same distance upstream?
+
+**Solution**:
+First, calculate the boat speed:  
+320 ÷ 8 - 15 = 25 kilometers per hour
+
+Then, calculate the boat’s upstream speed:  
+25 - 15 = 10 kilometers per hour
+
+Finally, calculate the time taken to travel upstream:  
+320 ÷ 10 = 32 hours
+
+---
+
+### Problem Type 12: Train Passing a Bridge Problem
+
+**Definition**: This type of problem involves calculating the time it takes for a train to pass a bridge, considering the length of the train.
+
+**Quantitative Relationships**:  
+Passing time = (Train length + Bridge length) ÷ Train speed
+
+**Solution Strategy**: Use the formula and its variations to solve the problem.
+
+**Example**: A bridge is 2400 meters long. A train travels at 900 meters per minute. How long is the train if it takes 3 minutes to pass the bridge from the time the front of the train reaches the bridge until the back of the train leaves the bridge?
+
+**Solution**:
+First, calculate the total distance the train covers in 3 minutes:  
+900 × 3 = 2700 meters
+
+Then, calculate the length of the train:  
+2700 - 2400 = 300 meters
+
+Comprehensive equation:  
+900 × 3 - 2400 = 300 meters
+
+---
+
+### Problem Type 13: Clock Problem
+
+**Definition**: This type of problem studies the relationship between the hour hand and the minute hand on a clock, such as when the two hands overlap, are perpendicular, form a straight line, or form an angle.
+
+**Quantitative Relationships**:
+- The minute hand moves 12 times faster than the hour hand.
+- The speed difference between the two hands is 11/12.
+
+**Solution Strategy**: Convert the problem into a "catch-up" or "difference multiple" problem.
+
+**Example**: Starting from 4 o'clock, after how many minutes will the hour and minute hands overlap?
+
+**Solution**:
+According to the quantitative relationship, each minute the minute hand gains (1 - 1/12) = 11/12 of a clock division on the hour hand. At 4 o'clock, the hour hand is ahead of the minute hand by 20 divisions. Therefore, the time required for the minute hand to catch up is:
+
+20 ÷ (1 - 1/12) ≈ 22 minutes
+
+---
+
+### Problem Type 14: Surplus and Deficit Problem
+
+**Definition**: This type of problem involves distributing a certain number of items among a certain number of people. In one distribution, there is a surplus (surplus), and in another, there is a deficit (deficit). Alternatively, both distributions may have a surplus or both may have a deficit.
+
+**Quantitative Relationships**:
+- If there is both a surplus and a deficit:  
+  Total number of participants = (Surplus + Deficit) ÷ Distribution difference
+- If there are two surpluses or two deficits:  
+  Total number of participants = (Larger surplus - Smaller surplus) ÷ Distribution difference  
+  Total number of participants = (Larger deficit - Smaller deficit) ÷ Distribution difference
+
+**Solution Strategy**: Determine which type of surplus and deficit problem it is, then directly apply the formula.
+
+**Example**: If each child in a kindergarten is given 3 apples, there are 11 apples left. If each child is given 4 apples, 1 apple is short. How many children are there? How many apples are there in total?
+
+**Solution**:
+This is a surplus and deficit problem. Directly apply the formula:  
+First, calculate the number of children:  
+(11 + 1) ÷ (4 - 3) = 12 children
+
+Then, calculate the total number of apples:  
+3 × 12 + 11 = 47 apples
+
+---
+
+### Problem Type 15: Work Problem
+
+**Definition**: This type of problem involves the relationship between work quantity, work efficiency, and work time.
+
+**Quantitative Relationships**:
+- Work quantity = Work efficiency × Work time
+- Work time = Work quantity ÷ Work efficiency
+- Work time = Work quantity ÷ (Efficiency of A + Efficiency of B)
+
+**Solution Strategy**: The key to solving such problems is to treat the total work as "1" and then apply the formula.
+
+**Example**: A project would take Team A 10 days to complete alone, and Team B 15 days to complete alone. How many days will it take if both teams work together?
+
+**Solution**:
+Treat the project as "1". Team A completes 1/10 of the project per day, and Team B completes 1/15 of the project per day. Together, they complete (1/10 + 1/15) of the project per day. Therefore, the time required to complete the project is:
+
+1 ÷ (1/10 + 1/15) = 1 ÷ 1/6 = 6 days
+
+---
+
+### Problem Type 16: Cows Eating Grass Problem
+
+**Definition**: This problem was proposed by the famous scientist Newton. The key characteristic of this problem is that the grass grows while being eaten.
+
+**Quantitative Relationships**:  
+Total grass = Initial amount of grass + Grass growth per day × Number of days
+
+**Solution Strategy**: The key is to calculate the daily grass growth.
+
+**Example**: A field can feed 10 cows for 20 days or 15 cows for 10 days. How many cows can eat the grass in 5 days?
+
+**Solution**:
+Let the daily grass consumption per cow be 1 unit. Solve the problem in five steps:
+
+1. Calculate the daily grass growth:  
+   50 ÷ (20 - 10) = 5 units
+
+2. Calculate the initial amount of grass:  
+   15 cows × 10 days - 5 units × 10 days = 100 units
+
+3. Calculate the total grass available in 5 days:  
+   Initial grass + Grass growth in 5 days = 100 + 5 × 5 = 125 units
+
+4. Calculate how many cows can eat the grass in 5 days:  
+   125 ÷ (5 days × 1 unit per cow) = 25 cows
+
+---
+
+### Problem Type 17: Chicken and Rabbit Problem
+
+**Definition**: This is a classic arithmetic problem. The first type of problem involves being given the total number of chickens and rabbits and the total number of legs, and then finding how many of each there are. The second type involves being given the total number of chickens and rabbits and the difference between the number of chicken legs and rabbit legs, and then finding how many of each there are.
+
+**Quantitative Relationships**:
+- For the first type:  
+  Assuming all are chickens:  
+  Number of rabbits = (Total legs - 2 × Total animals) ÷ (4 - 2)  
+  Assuming all are rabbits:  
+  Number of chickens = (4 × Total animals - Total legs) ÷ (4 - 2)
+  
+- For the second type:  
+  Assuming all are chickens:  
+  Number of rabbits = (2 × Total animals - Leg difference) ÷ (4 + 2)  
+  Assuming all are rabbits:  
+  Number of chickens = (4 × Total animals + Leg difference) ÷ (4 + 2)
+
+**Solution Strategy**: Determine which type of chicken and rabbit problem it is, then apply the corresponding formula.
+
+**Example**: There are 35 heads and 94 legs in total. How many chickens and rabbits are there?
+
+**Solution**:
+Assuming all are rabbits, use the formula:  
+Number of chickens = (4 × 35 - 94) ÷ (4 - 2) = 23 chickens  
+Number of rabbits = 35 - 23 = 12 rabbits
+
+---
+
+### Problem Type 18: Profit and Loss Problem
+
+**Definition**: This type of problem involves the relationship between cost price, profit, profit margin, loss, and loss rate.
+
+**Quantitative Relationships**:
+- Profit = Selling price - Cost price
+- Profit margin = (Selling price - Cost price) ÷ Cost price × 100%
+- Selling price = Cost price × (1 + Profit margin)
+- Loss = Cost price - Selling price
+- Loss rate = (Cost price - Selling price) ÷ Cost price × 100%
+
+**Solution Strategy**: Use the formulas and their variations to solve the problem.
+
+**Example**: The average price of a certain product increased by 10% in January, and then decreased by 10% in February. What is the price change from the original price to the price in February?
+
+**Solution**:
+Assume the original price is "1".  
+The price in January is:  
+1 × (1 + 10%) = 1.1
+
+The price in February is:  
+1.1 × (1 - 10%) = 0.99
+
+Thus, the price in February has decreased by:  
+1 - 0.99 = 1%
+
+---
+
+### Problem Type 19: Bank Interest Problem
+
+**Definition**: This type of problem involves the relationship between principal, interest rate, and deposit term.
+
+**Quantitative Relationships**:
+- Annual (or monthly) interest rate = Interest ÷ Principal ÷ Number of years (or months) × 100%
+- Interest = Principal × Number of years (or months) × Annual (or monthly) interest rate
+- Total amount = Principal + Interest = Principal × (1 + Annual (or monthly) interest rate × Number of years (or months))
+
+**Solution Strategy**: Directly apply the formulas.
+
+**Example**: Daqiang deposited 1200 yuan in the bank at a monthly interest rate of 0.8%. After the deposit term, he withdrew a total of 1488 yuan, including interest. How long was the deposit term?
+
+**Solution**:
+First, calculate the total interest:  
+1488 - 1200 = 288 yuan
+
+Then, calculate the total interest rate:  
+288 ÷ 1200 = 0.24
+
+Finally, calculate the deposit term:  
+0.24 ÷ 0.8% = 30 months
+
+---
+
+### Problem Type 20: Solution Concentration Problem
+
+**Definition**: This type of problem involves the relationship between a solvent (water or another liquid), solute, solution, and concentration.
+
+**Quantitative Relationships**:
+- Solution = Solvent + Solute
+- Concentration = Solute ÷ Solution × 100%
+
+**Solution Strategy**: Use the formulas and their variations to analyze and calculate the problem.
+
+**Example**: There is 50 grams of a 16% sugar solution. How much water needs to be added to dilute it to a 10% sugar solution?
+
+**Solution**:
+Using the formula:  
+50 × 16% ÷ 10% - 50 = 30 grams of water need to be added.
+
+---
+
+### Problem Type 21: Equation Problem
+
+**Definition**: In this type of problem, an unknown quantity is represented by the variable \( X \), and an equation is set up based on the problem's conditions. The equation is then solved to find the value of \( X \).
+
+**Quantitative Relationships**: The left and right sides of the equation represent equal quantities.
+
+**Solution Strategy**: The solution can be summarized as the six-step method: "Examine, Set, Formulate, Solve, Verify, and Answer."  
+- **Examine**: Carefully examine the problem to find the known conditions and the question being asked.  
+- **Set**: Set the unknown quantity as \( X \).  
+- **Formulate**: Based on the known conditions, formulate the equation.  
+- **Solve**: Solve the equation.  
+- **Verify**: Check the equation and the solution process for correctness.  
+- **Answer**: Write the final answer to the question.
+
+**Example**: Class A and Class B have a total of 90 students. The number of students in Class A is 30 fewer than twice the number of students in Class B. How many students are in each class?
+
+**Solution**:
+Let the number of students in Class B be \( X \), so the number of students in Class A is \( 90 - X \).  
+Based on the problem, the equation is:  
+\( 90 - X = 2X - 30 \)
+
+Solve the equation:  
+\( 90 + 30 = 3X \)  
+\( X = 40 \)
+
+Thus, Class B has 40 students, and Class A has \( 90 - 40 = 50 \) students.
+
+---

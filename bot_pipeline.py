@@ -5,11 +5,14 @@ import json
 from accelerate import infer_auto_device_map
 from meta_buffer_utilis import meta_distiller_prompt,extract_and_execute_code
 from test_templates import game24,checkmate,word_sorting
+from meta_buffer import MetaBuffer
+from openai import OpenAI
 
 class Pipeline:
-    def __init__(self,model_id,api_key=None):
+    def __init__(self,model_id,api_key=None,base_url='https://api.openai.com/v1/'):
         self.api = False
         self.local = False
+        self.base_url = base_url
         self.model_id = model_id
         if api_key is None:
             self.local = True
@@ -24,33 +27,16 @@ class Pipeline:
             self.api_key = api_key
     def get_respond(self,meta_prompt,user_prompt):
         if self.api:
-            conn = http.client.HTTPSConnection("api.openai.com")
-            payload = json.dumps({
-            "model": self.model_id,
-            "messages": [
-                {
-                    "role": 'assistant',
-                    "content": meta_prompt
-                },
-                {
-                    "role": 'user',
-                    "content": user_prompt
-                },
-            ]
-            })
-            headers = {
-            'Accept': 'application/json',
-            'Authorization': f'Bearer {self.api_key}',
-            'User-Agent': 'Apifox/1.0.0 (https://apifox.com)',
-            'Content-Type': 'application/json'
-            }
-            conn.request("POST", "/v1/chat/completions", payload, headers)
-            res = conn.getresponse()
-            data = res.read()
-            text = data.decode("utf-8")
-            dict_object = json.loads(text)
-            respond = dict_object['choices'][0]['message']['content']
-            return respond
+            client = OpenAI(api_key=self.api_key,base_url= self.base_url)
+            completion = client.chat.completions.create(
+                model=self.model_id,
+                messages=[
+                    {"role": "system", "content": meta_prompt},
+                    {"role": "user", "content": user_prompt},
+                ],
+            )
+            response = completion.choices[0].message.content
+            return response
         else:
             messages = [
             {"role": "system", "content": meta_prompt},
@@ -80,25 +66,33 @@ class Pipeline:
             return respond
             
 
+
         
 class BoT:
-    def __init__(self, user_input,problem_id,api_key=None,model_id=None,need_check=False):
+    def __init__(self, user_input,problem_id=0,api_key=None,model_id='gpt-4o-mini',embedding_model='text-embedding-3-large',need_check=False,base_url='https://api.openai.com/v1/',rag_dir=None):
         self.api_key = api_key
         self.model_id = model_id
-        self.pipeline = Pipeline(self.model_id,self.api_key)
+        self.embedding_model = embedding_model
+        self.base_url = base_url
+        self.pipeline = Pipeline(self.model_id,self.api_key,self.base_url)
+        self.meta_buffer = MetaBuffer(self.model_id,self.embedding_model,self.api_key,base_url=self.base_url)
         self.user_input = user_input
         # Only for test use, stay tuned for our update
         self.problem_id = problem_id 
         self.need_check = need_check
+        with open("./math.txt") as f:
+            self.meta_buffer.rag.insert(f.read())
+            
     def update_input(self,new_input):
         self.user_input = new_input
+        
     def problem_distillation(self):
         print(f'User prompt:{self.user_input}')
         self.distilled_information = self.pipeline.get_respond(meta_distiller_prompt, self.user_input)
         print(f'Distilled information:{self.distilled_information}')
-        
+
     def buffer_retrieve(self):
-        # For initial test use, we will later update the embedding retrieval version to support more 
+        # For initial test use, we will later update the embedding retrieval version to support more, trail version
         if self.problem_id == 0:
             self.thought_template = game24
         elif self.problem_id == 1:
@@ -106,6 +100,42 @@ class BoT:
         elif self.problem_id == 2:
             self.thought_template = word_sorting
             
+    def buffer_instantiation(self):
+        self.buffer_prompt = """
+        You are an expert in problem analysis and can apply previous problem-solving approaches to new issues. The user will provide a specific task description and a meta buffer that holds multiple thought templates that will help to solve the problem. Your goal is to first extract most relevant thought template from meta buffer, analyze the user's task and generate a specific solution based on the thought template. Give a final answer that is easy to extract from the text.
+        """
+        input = self.buffer_prompt + self.distilled_information
+        self.result = self.meta_buffer.retrieve_and_instantiate(input)
+        print(self.result)
+        
+    def buffer_manager(self):
+        self.problem_solution_pair = self.user_input + self.result
+        self.thought_distillation()
+        self.meta_buffer.dynamic_update(self.distilled_thought)
+        
+    def thought_distillation(self):
+        thought_distillation_prompt = """You are an expert in problem analysis and generalization. Your task is to follow the format of thought template below and distill a high-level thought template to solve similar problems:
+        Example thought template:
+        ### Problem Type 20: Solution Concentration Problem
+
+**Definition**: This type of problem involves the relationship between a solvent (water or another liquid), solute, solution, and concentration.
+
+**Quantitative Relationships**:
+- Solution = Solvent + Solute
+- Concentration = Solute ÷ Solution × 100%
+
+**Solution Strategy**: Use the formulas and their variations to analyze and calculate the problem.
+
+**Example**: There is 50 grams of a 16% sugar solution. How much water needs to be added to dilute it to a 10% sugar solution?
+
+**Solution**:
+Using the formula:  
+50 × 16% ÷ 10% - 50 = 30 grams of water need to be added.
+
+It should be noted that you should only return the thought template without any extra output.
+        """
+        self.distilled_thought = self.pipeline.get_respond(thought_distillation_prompt, self.problem_solution_pair)
+        print('Distilled thought: ',self.distilled_thought)
     def reasoner_instantiation(self):
         # Temporay using selection method to select answer extract method
         problem_id_list = [0,1,2]
@@ -172,9 +202,15 @@ Your respond should follow the format below:
         self.reasoner_instantiation()
         return self.final_result
     
+    def bot_inference(self):
+        self.problem_distillation()
+        self.buffer_instantiation()
+        self.buffer_manager()
+        print('Final results:',self.result)
     
     
-        
+
+
            
             
             
