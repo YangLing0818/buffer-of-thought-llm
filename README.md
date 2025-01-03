@@ -4,9 +4,9 @@
 
 Official implementation of our [Buffer of Thoughts (BoT)](https://arxiv.org/abs/2406.04271) framework (**NeurIPS 2024 Spotlight**). Affiliation: Peking University, UC Berkeley, Stanford University
 
-Based on our BoT, we propose [SuperCorrect](https://github.com/YangLing0818/SuperCorrect-llm), a novel two-stage fine-tuning method for improving both reasoning accuracy and self-correction ability for LLMs. Notably, the new SupperCorrect-7B model achieves new SOTA performance on MATH and GSM8K benchmarks among all 7B models.
 
 ## 📢 News
+[2024.10] 🎉 We release [SuperCorrect](https://github.com/YangLing0818/SuperCorrect-llm) based on Buffer of Thoughts, a new self-correction LLM reasoning framework. Notably, this new SupperCorrect-7B model achieves SOTA performance on MATH and GSM8K benchmarks among all 7B models.
 
 [2024.10] 🎉 We update our repo and release our implementation of **Meta Buffer** and **Buffer Manager**  on math problems such as **GSM8K** based on amazing work [light-RAG](https://github.com/HKUDS/LightRAG).
 
