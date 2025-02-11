@@ -8,6 +8,14 @@ Official implementation of our [Buffer of Thoughts (BoT)](https://arxiv.org/abs/
 ## 📢 News
 [2025.2] 🎉 We release [ReasonFlux](https://github.com/Gen-Verse/ReasonFlux), a revolutionary inference-scaling paradigm with a hierarchical RL algorithm: enpowering **a 32B model with 500 thought templates to outperform o1-preview and DeepSeek-V3** in reasoning tasks.
 
+| Task           | **ReasonFlux 32B** | **DeepSeek V3** | **OpenAI o1-preview** | **OpenAI o1-mini** | **QWQ 32B-preview** | **GPT 4o** |
+| :------------- | :----------------: | :-------------: | :-------------------: | :----------------: | :-----------------: | :--------: |
+| MATH           |      **91.2**      |      90.2       |         85.5          |        90.0        |        90.6         |    76.6    |
+| AIME 2024      |      **56.7**      |      39.2       |         44.6          |        56.7        |        50.0         |    9.3     |
+| Olympiad Bench |      **63.3**      |      55.4       |           -           |        65.3        |        61.2         |    43.3    |
+| GaokaoEn 2023  |      **83.6**      |        -        |         71.4          |        78.4        |        65.3         |    67.5    |
+| AMC2023        |      **85.0**      |      80.0       |         90.0          |        95.0        |          -          |    47.5    |
+
 [2024.10] 🎉 We release [SuperCorrect](https://github.com/YangLing0818/SuperCorrect-llm) based on Buffer of Thoughts, a new self-correction LLM reasoning framework. Notably, this new SupperCorrect-7B model achieves SOTA performance on MATH and GSM8K benchmarks among all 7B models.
 
 [2024.10] 🎉 We update our repo and release our implementation of **Meta Buffer** and **Buffer Manager**  on math problems such as **GSM8K** based on amazing work [light-RAG](https://github.com/HKUDS/LightRAG).
