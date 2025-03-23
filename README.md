@@ -6,7 +6,7 @@ Official implementation of our [Buffer of Thoughts (BoT)](https://arxiv.org/abs/
 
 
 ## 📢 News
-[2025.3] 🎉We release [ReasonFlux-F1-32B](https://huggingface.co/Gen-Verse/ReasonFlux-F1), [ReasonFlux-F1-14B](https://huggingface.co/Gen-Verse/ReasonFlux-F1-14B), [ReasonFlux-F1-7B](https://huggingface.co/Gen-Verse/ReasonFlux-F1-7B), a series of SOTA-level reasoning LLMs by leveraging the template-augmented reasoning trajectories collected from our [ReasonFlux-Zero](https://github.com/Gen-Verse/ReasonFlux). For the training and evaluation scripts, please refer to [Reasonflux-F1](https://github.com/Gen-Verse/ReasonFlux/tree/main/reasonflux-f1) for detail.
+[2025.3] 🎉We release [ReasonFlux-F1-32B](https://huggingface.co/Gen-Verse/ReasonFlux-F1), [ReasonFlux-F1-14B](https://huggingface.co/Gen-Verse/ReasonFlux-F1-14B), [ReasonFlux-F1-7B](https://huggingface.co/Gen-Verse/ReasonFlux-F1-7B), a series of SOTA-level reasoning LLMs by leveraging the **template-augmented reasoning (based on BoT) trajectories** collected from our [ReasonFlux-Zero](https://github.com/Gen-Verse/ReasonFlux). For the training and evaluation scripts, please refer to [Reasonflux-F1](https://github.com/Gen-Verse/ReasonFlux/tree/main/reasonflux-f1) for detail.
 
 | Task/Pass@1           | [**ReasonFlux-F1-32B**](https://huggingface.co/Gen-Verse/ReasonFlux-F1) | **ReasonFlux-Zero-32B** | **DeepSeek-R1-Distill-32B** | **o1-mini** | **LIMO -32B** | **s1-32B** |
 | :------------- | :----------------: | :-------------: | :-------------------: | :-----------------: | :--------: | :--------: |
