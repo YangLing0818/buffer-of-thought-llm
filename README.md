@@ -74,7 +74,8 @@ First, set up the environment:
 ```bash
 git clone https://github.com/YangLing0818/buffer-of-thought-llm
 cd buffer-of-thought-llm
-conda create -n BoT python==3.9 
+conda create -n BoT python==3.9
+conda activate BoT
 pip install -r requirements.txt
 ```
 
