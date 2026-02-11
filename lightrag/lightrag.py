@@ -3,7 +3,7 @@ import os
 from dataclasses import asdict, dataclass, field
 from datetime import datetime
 from functools import partial
-from typing import Type, cast
+from typing import Type, cast, Union, Callable
 
 from .llm import (
     gpt_4o_mini_complete,
@@ -84,7 +84,7 @@ class LightRAG:
     embedding_func_max_async: int = 16
 
     # LLM
-    llm_model_func: callable = gpt_4o_mini_complete  # hf_model_complete#
+    llm_model_func: Callable = gpt_4o_mini_complete  # hf_model_complete#
     llm_model_name: str = "meta-llama/Llama-3.2-1B-Instruct"  #'meta-llama/Llama-3.2-1B'#'google/gemma-2-2b-it'
     llm_model_max_token_size: int = 32768
     llm_model_max_async: int = 16
@@ -98,9 +98,9 @@ class LightRAG:
 
     # extension
     addon_params: dict = field(default_factory=dict)
-    convert_response_to_json_func: callable = convert_response_to_json
+    convert_response_to_json_func: Callable = convert_response_to_json
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         log_file = os.path.join(self.working_dir, "lightrag.log")
         set_logger(log_file)
         logger.info(f"Logger initialized for working directory: {self.working_dir}")
@@ -132,7 +132,7 @@ class LightRAG:
         )
 
         self.embedding_func = limit_async_func_call(self.embedding_func_max_async)(
-            self.embedding_func
+            self.embedding_func  # type: ignore
         )
 
         self.entities_vdb = self.vector_db_storage_cls(
@@ -157,11 +157,11 @@ class LightRAG:
             partial(self.llm_model_func, hashing_kv=self.llm_response_cache)
         )
 
-    def insert(self, string_or_strings):
+    def insert(self, string_or_strings: Union[str, list[str]]) -> None:
         loop = always_get_an_event_loop()
         return loop.run_until_complete(self.ainsert(string_or_strings))
 
-    async def ainsert(self, string_or_strings):
+    async def ainsert(self, string_or_strings: Union[str, list[str]]) -> None:
         try:
             if isinstance(string_or_strings, str):
                 string_or_strings = [string_or_strings]
@@ -223,7 +223,7 @@ class LightRAG:
         finally:
             await self._insert_done()
 
-    async def _insert_done(self):
+    async def _insert_done(self) -> None:
         tasks = []
         for storage_inst in [
             self.full_docs,
@@ -239,11 +239,11 @@ class LightRAG:
             tasks.append(cast(StorageNameSpace, storage_inst).index_done_callback())
         await asyncio.gather(*tasks)
 
-    def query(self, query: str, param: QueryParam = QueryParam()):
+    def query(self, query: str, param: QueryParam = QueryParam()) -> str:
         loop = always_get_an_event_loop()
         return loop.run_until_complete(self.aquery(query, param))
 
-    async def aquery(self, query: str, param: QueryParam = QueryParam()):
+    async def aquery(self, query: str, param: QueryParam = QueryParam()) -> str:
         if param.mode == "local":
             response = await local_query(
                 query,
@@ -287,7 +287,7 @@ class LightRAG:
         await self._query_done()
         return response
 
-    async def _query_done(self):
+    async def _query_done(self) -> None:
         tasks = []
         for storage_inst in [self.llm_response_cache]:
             if storage_inst is None:

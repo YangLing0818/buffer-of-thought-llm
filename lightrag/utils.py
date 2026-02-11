@@ -7,7 +7,7 @@ import re
 from dataclasses import dataclass
 from functools import wraps
 from hashlib import md5
-from typing import Any, Union
+from typing import Any, Union, Callable
 import xml.etree.ElementTree as ET
 
 import numpy as np
@@ -37,7 +37,7 @@ def set_logger(log_file: str):
 class EmbeddingFunc:
     embedding_dim: int
     max_token_size: int
-    func: callable
+    func: Callable
 
     async def __call__(self, *args, **kwargs) -> np.ndarray:
         return await self.func(*args, **kwargs)
@@ -163,7 +163,7 @@ def is_float_regex(value):
     return bool(re.match(r"^[-+]?[0-9]*\.?[0-9]+$", value))
 
 
-def truncate_list_by_token_size(list_data: list, key: callable, max_token_size: int):
+def truncate_list_by_token_size(list_data: list, key: Callable, max_token_size: int):
     """Truncate a list of data by token size"""
     if max_token_size <= 0:
         return []
