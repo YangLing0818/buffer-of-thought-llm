@@ -33,11 +33,11 @@ class StorageNameSpace:
     namespace: str
     global_config: dict
 
-    async def index_done_callback(self):
+    async def index_done_callback(self) -> None:
         """commit the storage operations after indexing"""
         pass
 
-    async def query_done_callback(self):
+    async def query_done_callback(self) -> None:
         """commit the storage operations after querying"""
         pass
 
@@ -50,7 +50,7 @@ class BaseVectorStorage(StorageNameSpace):
     async def query(self, query: str, top_k: int) -> list[dict]:
         raise NotImplementedError
 
-    async def upsert(self, data: dict[str, dict]):
+    async def upsert(self, data: dict[str, dict]) -> None:
         """Use 'content' field from value for embedding, use key as id.
         If embedding_func is None, use 'embedding' field from value
         """
@@ -74,10 +74,10 @@ class BaseKVStorage(Generic[T], StorageNameSpace):
         """return un-exist keys"""
         raise NotImplementedError
 
-    async def upsert(self, data: dict[str, T]):
+    async def upsert(self, data: dict[str, T]) -> None:
         raise NotImplementedError
 
-    async def drop(self):
+    async def drop(self) -> None:
         raise NotImplementedError
 
 
@@ -108,15 +108,15 @@ class BaseGraphStorage(StorageNameSpace):
     ) -> Union[list[tuple[str, str]], None]:
         raise NotImplementedError
 
-    async def upsert_node(self, node_id: str, node_data: dict[str, str]):
+    async def upsert_node(self, node_id: str, node_data: dict[str, str]) -> None:
         raise NotImplementedError
 
     async def upsert_edge(
         self, source_node_id: str, target_node_id: str, edge_data: dict[str, str]
-    ):
+    ) -> None:
         raise NotImplementedError
 
-    async def clustering(self, algorithm: str):
+    async def clustering(self, algorithm: str) -> None:
         raise NotImplementedError
 
     async def embed_nodes(self, algorithm: str) -> tuple[np.ndarray, list[str]]:

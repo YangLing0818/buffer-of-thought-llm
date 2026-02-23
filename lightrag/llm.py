@@ -216,7 +216,7 @@ async def bedrock_complete_if_cache(
 
 
 @lru_cache(maxsize=1)
-def initialize_hf_model(model_name):
+def initialize_hf_model(model_name: str):
     hf_tokenizer = AutoTokenizer.from_pretrained(
         model_name, device_map="auto", trust_remote_code=True
     )

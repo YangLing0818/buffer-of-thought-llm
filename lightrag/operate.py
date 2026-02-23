@@ -1,7 +1,7 @@
 import asyncio
 import json
 import re
-from typing import Union
+from typing import Union, Callable, Optional, List, Dict, Tuple, Set
 from collections import Counter, defaultdict
 import warnings
 from .utils import (
@@ -52,7 +52,7 @@ async def _handle_entity_relation_summary(
     description: str,
     global_config: dict,
 ) -> str:
-    use_llm_func: callable = global_config["llm_model_func"]
+    use_llm_func: Callable = global_config["llm_model_func"]
     llm_max_tokens = global_config["llm_model_max_token_size"]
     tiktoken_model_name = global_config["tiktoken_model_name"]
     summary_max_tokens = global_config["entity_summary_to_max_tokens"]
@@ -242,7 +242,7 @@ async def extract_entities(
     relationships_vdb: BaseVectorStorage,
     global_config: dict,
 ) -> Union[BaseGraphStorage, None]:
-    use_llm_func: callable = global_config["llm_model_func"]
+    use_llm_func: Callable = global_config["llm_model_func"]
     entity_extract_max_gleaning = global_config["entity_extract_max_gleaning"]
 
     ordered_chunks = list(chunks.items())
